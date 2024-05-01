@@ -1,70 +1,27 @@
-# Getting Started with Create React App
+# Markdown Previewer
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is a Markdown previewer built using React. Markdown is a lightweight markup language with plain-text formatting syntax, often used to format readme files, comments, and messages. The Markdown previewer allows users to input Markdown syntax into a text area, and it dynamically generates a preview of the formatted content in real-time.
 
-## Available Scripts
+## Components and Functionality
 
-In the project directory, you can run:
+### 1. Markdown Input
+- Users can input Markdown syntax into a textarea.
+- The textarea is part of the `editor` div.
 
-### `npm start`
+### 2. Markdown Preview
+- As the user types Markdown syntax into the textarea, the preview section (`preview` div) displays the formatted HTML version of the Markdown content.
+- The preview is updated in real-time using React's state management.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### 3. Markdown Conversion
+- When the user inputs Markdown syntax, it is converted to HTML using the `marked` library. This library parses Markdown and converts it into HTML.
+- The HTML output is sanitized using `DOMPurify` to prevent XSS (Cross-Site Scripting) attacks by removing any potentially harmful content.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### 4. State Management
+- The component utilizes React's state hooks (`useState`) to manage the Markdown input (`markdown`) and the HTML output (`html`).
 
-### `npm test`
+### 5. Effect Hook
+- The `useEffect` hook is used to update the HTML output (`html`) whenever the Markdown input (`markdown`) changes. This ensures that the preview is always synchronized with the input.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### 6. Styling
+- The project includes CSS for styling the editor and preview sections.
+- Media queries are used to adjust the width of the editor and preview sections for different screen sizes.
